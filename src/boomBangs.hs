@@ -1,4 +1,5 @@
 
+boomBangs :: Integral a => [a] -> [[Char]]
 boomBangs xs =
   [ if x < 10
        then "BOOM!"
