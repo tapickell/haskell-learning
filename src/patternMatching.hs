@@ -22,3 +22,38 @@ thirdTrip (_, _, x) = x
 hd' :: [a] -> a
 hd' [] = error "Nope"
 hd' (x:_) = x
+
+tell :: (Show a) => [a] -> String
+tell []       = "Empty List"
+tell (x:[])   = "One element: "  ++ show x
+tell (x:y:[]) = "Two elements: " ++ show x ++ " and " ++ show y
+tell (x:y:_)  = "Long list: "    ++ show x ++ " and " ++ show y
+
+length' :: (Num b) => [a] -> b
+length' [] = 0
+length' (_:xs) = 1 + length' xs
+
+sum' :: (Num a) => [a] -> a
+sum' [] = 0
+sum' (x:xs) = x + sum' xs
+
+zum' :: Num a => [a] -> a
+zum' xs = zumr' xs 0
+
+zumr' :: Num a => [a] -> a -> a
+zumr' [] a = a
+zumr' (x:xs) a = zumr' xs a+x
+
+capital :: String -> String
+capital "" = "Empty String"
+capital all@(x:xs) = "First letter of " ++ all ++ " is " ++ [x]
+
+
+
+
+
+
+
+
+
+
