@@ -26,6 +26,9 @@ flip' f = g
 flipa' :: (a -> b -> c) -> b -> a -> c
 flipa' f y x = f x y
 
+flipb' :: (a -> b -> c) -> b -> a -> c
+flipb' f = \x y -> f y x
+
 map' :: (a -> b) -> [a] -> [b]
 map' _ [] = []
 map' f (x:xs) = f x : map' f xs
@@ -52,6 +55,9 @@ chain 1 = [1]
 chain n
     | even n = n:chain (n `div` 2)
     | odd n  = n:chain (n*3 + 1)
+
+numLongChains :: Int
+numLongChains = length (filter (\xs -> length xs > 15) (map chain [1..100]))
 
 
 
