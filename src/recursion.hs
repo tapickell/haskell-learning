@@ -22,6 +22,7 @@ reverse' :: [a] -> [a]
 reverse' [] = []
 reverse' (x:xs) = reverse' xs ++ [x]
 
+-- this never ends :P
 repeat' :: a -> [a]
 repeat' x = x:repeat' x
 
